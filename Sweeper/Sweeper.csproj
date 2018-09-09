@@ -121,6 +121,9 @@
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\SweeperViewModel.cs" />
     <Compile Include="Views\Converters\ThemeChecker.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
     <Page Include="Views\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Page1.xaml">
       <Generator>MSBuild:Compile</Generator>
