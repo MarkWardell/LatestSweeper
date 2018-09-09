@@ -1,0 +1,98 @@
+﻿<Window x:Class="Sweeper.Views.UndoRedoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Sweeper.ViewModels" Height="498.507" Width="1195.015" Closing="Window_Closing" Topmost="True" Title="Command Stack">
+    <Window.DataContext>
+        <vm:UndoRedoViewModel/>
+    </Window.DataContext>
+    <Grid Background="{DynamicResource BoardBG}">
+        <Grid.Resources>
+            <DataTemplate x:Key="CommandDataTemplate">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <TextBlock Padding="10" VerticalAlignment ="Center" Text="{Binding Seq}"/>
+                    </Grid>
+                    <StackPanel Grid.Column="1" >
+                        <StackPanel Orientation="Vertical" TextBlock.FontWeight="Bold" >
+                            <TextBlock VerticalAlignment ="Center" Text="{Binding Path=TimeStamp}"/>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding DisplayText}"/>
+                            <TextBlock Text="{Binding Path=Parm}" />
+
+                        </StackPanel>
+
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*">
+
+            </RowDefinition>
+            <RowDefinition Height="100">
+
+            </RowDefinition >
+            <RowDefinition Height="20">
+
+            </RowDefinition >
+
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,-10,0,10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40">
+
+                </RowDefinition>
+                <RowDefinition Height="*">
+
+                </RowDefinition >
+
+            </Grid.RowDefinitions>
+            <Label Grid.Column="1" Content="Undo Stack" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Bottom" Foreground="{DynamicResource HiGridBorderBrush}"/>
+            <Label Grid.Column="3" Content="Un Implemented Undos" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Bottom" Foreground="{DynamicResource HiGridBorderBrush}"/>
+            <Label Grid.Column="5" Content="Redo Stack" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Bottom" Foreground="{DynamicResource HiGridBorderBrush}"/>
+            <ListBox   ItemsSource="{Binding LUndo}"        BorderThickness="5" Grid.Row="1" Grid.Column="1" Background="{DynamicResource BORDERINTERIOR}" BorderBrush="{DynamicResource BORDER}" Foreground="{DynamicResource HiGridBorderBrush}"/>
+            <ListBox   ItemsSource="{Binding LBusTub}"      BorderThickness="5" Grid.Row="1" Grid.Column="3" BorderBrush="{DynamicResource BORDER}" Background="{DynamicResource BORDERINTERIOR}" Foreground="{DynamicResource HiGridBorderBrush}"/>
+            <ListBox   ItemsSource="{Binding LRedo}"        BorderThickness="5" Grid.Row="1" Grid.Column="5" BorderBrush="{DynamicResource BORDER}" Background="{DynamicResource BORDERINTERIOR}" Foreground="{DynamicResource HiGridBorderBrush}"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,31,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                
+                <ColumnDefinition></ColumnDefinition>
+                
+
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Click="Button_Click" IsDefault="True">Ok
+            </Button>
+            <Button Grid.Column="5" Command="{Binding RedoCommand}" CommandParameter="LAST"  BorderThickness="3" Content="Redo"/>
+            <Button Grid.Column="3" Command="{Binding UndoCommand}" CommandParameter="LAST" BorderThickness="3" Content="Undo"/>
+
+
+
+        </Grid>
+
+    </Grid>
+</Window>

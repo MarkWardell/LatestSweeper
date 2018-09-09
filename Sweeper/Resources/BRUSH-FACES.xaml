@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <VisualBrush x:Key="FGRINUP">
+        
+            <VisualBrush.Visual>
+            <Border Background="{DynamicResource BUTTON}" Width="90" Height="91"> 
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_grin.png"></Image>              
+            </Border>                
+            </VisualBrush.Visual>
+
+       
+    </VisualBrush>
+    <VisualBrush x:Key="FGRINDN">
+
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource PRESSED}" Width="90" Height="91">
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_grin.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+
+
+    </VisualBrush>
+    <VisualBrush x:Key="FSADUP">
+
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource BUTTON}" Width="90" Height="91" >
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_sad.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+
+
+    </VisualBrush>
+    <VisualBrush x:Key="FSADDN">
+
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource PRESSED}" Width="90" Height="91">
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_sad.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+
+
+    </VisualBrush>
+    <VisualBrush x:Key="FSMILEUP">
+
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_smile.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+
+
+    </VisualBrush>
+    <VisualBrush x:Key="FSMILEDN">
+
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource PRESSED}" Width="90" Height="91">
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_smile.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+
+
+    </VisualBrush>
+    <VisualBrush x:Key="FSURPRISEUP">
+
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_surprise.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+
+
+    </VisualBrush>
+    <VisualBrush x:Key="FSURPRISEDN">
+
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource PRESSED}" Width="90" Height="91">
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_surprise.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+
+
+    </VisualBrush>
+    <VisualBrush x:Key="FWINKUP" Stretch="None">
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource BUTTON}" Width="90" Height="91">
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_wink.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="FWINKDN">
+        <VisualBrush.Visual>
+            <Border Background="{DynamicResource PRESSED}" Width="90" Height="91">
+                <Image Source="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/FACES_file/tango_face_wink.png"></Image>
+            </Border>
+        </VisualBrush.Visual>
+    </VisualBrush>
+  
+</ResourceDictionary>

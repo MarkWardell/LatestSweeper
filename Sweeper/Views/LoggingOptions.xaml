@@ -1,0 +1,16 @@
+﻿<Window x:Class="Sweeper.Views.LoggingOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoggingOptions" Height="300" Width="590.995">
+    <Grid Background="{DynamicResource DIAG_BACKGROUND}" Margin="0,0,2,14">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="290*"/>
+            <ColumnDefinition Width="291*"/>
+        </Grid.ColumnDefinitions>
+        <CheckBox Content="Mouse Messages" HorizontalAlignment="Left" Margin="41,69,0,0" VerticalAlignment="Top" FontSize="16" Foreground="{DynamicResource DIAG_FOREGROUND}" Effect="{DynamicResource DIAGTEXTEFFECT}" Height="21" Width="138"/>
+        <CheckBox Content="Game Messages" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top" FontSize="16" Foreground="{DynamicResource DIAG_FOREGROUND}" Effect="{DynamicResource DIAGTEXTEFFECT}" Grid.Column="1" Height="21" Width="132"/>
+        <ListBox HorizontalAlignment="Left" Height="158" Margin="41,93,0,0" VerticalAlignment="Top" Width="193" Effect="{DynamicResource DIAGTEXTEFFECT}"/>
+        <ListBox HorizontalAlignment="Left" Height="158" Margin="0,96,0,0" VerticalAlignment="Top" Width="193" Effect="{DynamicResource DIAGTEXTEFFECT}" Grid.Column="1"/>
+
+    </Grid>
+</Window>

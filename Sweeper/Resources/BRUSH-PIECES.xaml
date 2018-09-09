@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+   
+        <DrawingBrush x:Key="P_ROUNDED_BORDER" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Brush="#FF0096FF" Geometry="M -192.5,115.5L -46.5,115.5L -46.5,220.5L -192.5,220.5L -192.5,115.5 Z M -186.5,117C -189.537,117 -192,119.463 -192,122.5L -192,213.5C -192,216.538 -189.537,219 -186.5,219L -52.5,219C -49.4624,219 -47,216.538 -47,213.5L -47,122.5C -47,119.463 -49.4624,117 -52.5,117L -186.5,117 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="5" MiterLimit="2.75" Brush="#FF0096FF"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+
+<DrawingBrush x:Key="P_BLANK" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Geometry="F1 M 0.5,0.5L 101.5,0.5L 101.5,90.5L 0.5,90.5L 0.5,0.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="{DynamicResource GridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_ONE" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FF147EE0" Geometry="F1 M 67.9841,77.1356L 34.3445,77.1356L 34.3445,70.8976L 47.8003,70.8976L 47.8003,22.9151L 34.0159,27.2316L 34.0159,20.4367L 54.5282,13.8645L 54.5282,70.8976L 67.9841,70.8976L 67.9841,77.1356 Z "/>
+                    <GeometryDrawing Geometry="F1 M 0.5,0.5L 101.5,0.5L 101.5,90.5L 0.5,90.5L 0.5,0.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="{DynamicResource GridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_TWO" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FFCF2B10" Geometry="F1 M 76.169,77.0016L 24.6032,77.0016L 24.6032,71.0535L 49.7339,52.7792C 56.1412,48.1297 60.7165,44.2568 63.4598,41.1602C 66.2031,38.0637 67.5747,34.7591 67.5747,31.2466C 67.5747,27.7341 66.1679,25.0165 63.3543,23.0939C 60.5407,21.1713 56.5441,20.21 51.3645,20.21C 43.7677,20.21 36.4843,22.5762 29.5143,27.3089L 29.5143,19.7524C 36.1902,15.9164 43.9596,13.9984 52.8224,13.9984C 60.4576,13.9984 66.4621,15.4958 70.836,18.4907C 75.2098,21.4856 77.3968,25.5064 77.3968,30.5534C 77.3968,34.565 75.8717,38.4819 72.8215,42.3041C 69.7713,46.1262 64.2879,50.8704 56.3714,56.5367L 36.4204,70.79L 36.4204,70.9565L 76.169,70.9565L 76.169,77.0016 Z "/>
+                    <GeometryDrawing Geometry="F1 M 0.5,0.5L 101.5,0.5L 101.5,90.5L 0.5,90.5L 0.5,0.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="{DynamicResource GridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_THREE" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FFFF00D0" Geometry="F1 M 28.0031,73.8298L 28.0031,66.0933C 33.4953,69.6747 39.6944,71.4654 46.6005,71.4654C 52.1978,71.4654 56.6674,70.3812 60.0094,68.2127C 63.3515,66.0443 65.0225,63.1274 65.0225,59.462C 65.0225,51.3478 57.5322,47.2907 42.5515,47.2907L 35.8557,47.2907L 35.8557,41.0232L 42.3587,41.0232C 55.9722,41.0232 62.7789,37.3018 62.7789,29.8591C 62.7789,22.9761 57.6782,19.5345 47.4769,19.5345C 41.7861,19.5345 36.4166,21.0268 31.3685,24.0113L 31.3685,17.0163C 36.4984,14.5168 42.5573,13.267 49.5452,13.267C 56.276,13.267 61.66,14.645 65.6973,17.4011C 69.7346,20.157 71.7533,23.6895 71.7533,27.9985C 71.7533,36.1313 66.3371,41.3589 55.5047,43.6812L 55.5047,43.8631C 61.1605,44.3015 65.6564,45.887 68.9926,48.6197C 72.3288,51.3525 73.9969,54.7661 73.9969,58.8604C 73.9969,64.5124 71.4349,69.0708 66.3108,72.5356C 61.1868,76.0005 54.4297,77.7329 46.0396,77.7329C 38.4908,77.7329 32.4787,76.4319 28.0031,73.8298 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen Thickness="1" LineJoin="Round" Brush="{DynamicResource GridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 0.5,0.5L 101.5,0.5L 101.5,90.5L 0.5,90.5L 0.5,0.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FF000000"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_FOUR" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FFFF7D00" Geometry="F1 M 79.1908,60.8445L 68.3943,60.8445L 68.3943,77.5839L 58.7974,77.5839L 58.7974,60.8445L 19.2103,60.8445L 19.2103,55.5116L 56.6981,12.4861L 68.3943,12.4861L 68.3943,54.3346L 79.1908,54.3346L 79.1908,60.8445 Z M 58.7974,54.3346L 58.7974,26.1159C 58.7974,24.1203 58.8786,21.8778 59.0411,19.3882L 58.7974,19.3882C 58.2476,20.4828 57.1667,22.149 55.5547,24.3867L 29.6319,54.3346L 58.7974,54.3346 Z "/>
+                    <GeometryDrawing Geometry="F1 M 0.5,0.499924L 101.5,0.499924L 101.5,90.4999L 0.5,90.4999L 0.5,0.499924 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="{DynamicResource GridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_FIVE" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FF5A0FC8" Geometry="F1 M 27.6076,75.259L 27.6076,67.3543C 33.3307,70.4542 39.1476,72.0042 45.0582,72.0042C 50.9813,72.0042 55.7516,70.6988 59.3691,68.0881C 62.9868,65.4775 64.7955,62.0215 64.7955,57.7205C 64.7955,53.4387 62.9337,50.0991 59.2098,47.7015C 55.4861,45.3039 50.1566,44.105 43.2213,44.105C 40.872,44.105 36.4672,44.2891 30.0068,44.6572L 30.0068,12.4861L 70.7936,12.4861L 70.7936,18.9959L 39.6037,18.9959L 39.6037,37.7842C 42.1404,37.6583 44.4834,37.5953 46.6327,37.5953C 55.4673,37.5953 62.3026,39.3584 67.1385,42.8845C 71.9745,46.4106 74.3924,51.2397 74.3924,57.3716C 74.3924,63.7168 71.7651,68.8267 66.5106,72.7017C 61.2561,76.5765 54.049,78.5139 44.8895,78.5139C 37.167,78.5139 31.4064,77.429 27.6076,75.259 Z "/>
+                    <GeometryDrawing Geometry="F1 M 0.5,0.5L 101.5,0.5L 101.5,90.5L 0.5,90.5L 0.5,0.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="{DynamicResource GridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_SIX" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FFC0E488" Geometry="F1 M 73.2367,15.5156L 73.2367,22.5073C 68.7543,20.7387 64.0215,19.8544 59.0383,19.8544C 51.3256,19.8544 45.153,22.2702 40.5203,27.1017C 35.8877,31.9333 33.5714,38.3977 33.5714,46.4948L 33.8155,46.4948C 37.8096,40.5256 44.3641,37.541 53.4791,37.541C 60.9915,37.541 66.9639,39.2774 71.3962,42.7502C 75.8285,46.2231 78.0446,50.8658 78.0446,56.6785C 78.0446,62.7582 75.5342,67.721 70.5134,71.567C 65.4927,75.4128 59.1072,77.3359 51.3569,77.3359C 42.8178,77.3359 36.1161,74.8716 31.2519,69.9434C 26.3876,65.0151 23.9555,58.097 23.9555,49.1893C 23.9555,38.3931 27.1639,29.7731 33.5807,23.3295C 39.9976,16.8859 48.4709,13.6641 59.0007,13.6641C 64.9856,13.6641 69.731,14.2813 73.2367,15.5156 Z M 51.5259,43.7313C 46.3799,43.7313 42.2075,44.9518 39.0084,47.393C 35.8094,49.834 34.2099,52.7127 34.2099,56.029C 34.2099,60.2019 35.8,63.7646 38.9802,66.717C 42.1605,69.6694 46.3862,71.1455 51.6574,71.1455C 56.6782,71.1455 60.7286,69.8605 63.8087,67.2903C 66.8887,64.7203 68.4288,61.4639 68.4288,57.5213C 68.4288,53.2102 66.9514,49.834 63.9965,47.393C 61.0416,44.9518 56.8848,43.7313 51.5259,43.7313 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="#FFDDD514"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 0.5,0.5L 101.5,0.5L 101.5,90.5L 0.5,90.5L 0.5,0.5 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="{DynamicResource GridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_SEVEN" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{DynamicResource GridBorderBrush}" Geometry="F1 M 21.6,1.17747L 8.30249,33.6L 4.32007,33.6L 16.89,3.36003L 0,3.36003L 0,-1.52588e-005L 21.6,-1.52588e-005L 21.6,1.17747 Z ">
+
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_EIGHT" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Geometry="F1 M 0.5,0.500015L 101.5,0.500015L 101.5,90.5L 0.5,90.5L 0.5,0.500015 Z ">
+                    <GeometryDrawing.Pen>
+                        <Pen LineJoin="Round" Brush="{DynamicResource GridBorderBrush}"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FF648247" Geometry="F1 M 42.9528,43.9751L 42.9528,43.8187C 33.4218,40.5865 28.6564,35.9034 28.6564,29.7692C 28.6564,25.59 30.8383,22.1624 35.2023,19.4862C 39.5663,16.8101 45.1813,15.4721 52.0474,15.4721C 58.2617,15.4721 63.3647,16.7232 67.3563,19.2256C 71.3479,21.7279 73.3437,24.9427 73.3437,28.8699C 73.3437,35.2735 68.4269,40.252 58.5934,43.8057L 58.5934,43.9621C 69.9165,47.0031 75.5781,52.264 75.5781,59.7449C 75.5781,64.5758 73.2622,68.414 68.6306,71.2595C 63.999,74.1051 57.5635,75.5278 49.3242,75.5278C 42.6677,75.5278 37.1865,74.1181 32.8807,71.2986C 28.5749,68.4791 26.422,64.8191 26.422,60.3184C 26.422,52.8375 31.9323,47.3897 42.9528,43.9751 Z M 64.4063,29.8082C 64.4063,27.1756 63.228,25.1012 60.8713,23.5851C 58.5148,22.0689 55.3,21.3109 51.2269,21.3109C 47.4216,21.3109 44.198,22.1015 41.5563,23.6829C 38.9147,25.2642 37.5938,27.2755 37.5938,29.7171C 37.5938,34.6869 42.0276,38.4361 50.8953,40.9645C 59.9026,38.3579 64.4063,34.6392 64.4063,29.8082 Z M 50.2844,47.1551C 40.3344,50.0831 35.3594,54.3233 35.3594,59.8753C 35.3594,62.7425 36.8141,65.095 39.7234,66.9326C 42.6328,68.7702 46.4673,69.689 51.2269,69.689C 55.7538,69.689 59.4545,68.7833 62.329,66.9717C 65.2034,65.16 66.6406,62.8728 66.6406,60.1099C 66.6406,54.3145 61.1885,49.9964 50.2844,47.1551 Z "/>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="P_MINESHADOW-WRONG" >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <MatrixTransform Matrix="1,0,0,1,0,7.00019"/>
+                        </DrawingGroup.Transform>
+                        <DrawingGroup.Children>
+                            <ImageDrawing ImageSource="IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/MineShadow-Wrong_files/image0.png" Rect="0,0,256,256"/>
+                           
+                        </DrawingGroup.Children>
+                    </DrawingGroup>
+                    <GeometryDrawing Geometry="F1 M 42,11L 243,245">
+                        <GeometryDrawing.Pen>
+                            <Pen Thickness="22" LineJoin="Round" Brush="{DynamicResource HiGridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 220,12.0003L 18,234">
+                        <GeometryDrawing.Pen>
+                            <Pen Thickness="22" LineJoin="Round" Brush="{DynamicResource HiGridBorderBrush}"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>  
+    <DrawingBrush x:Key="P_MINE"  >
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{DynamicResource GridBorderBrush}" Geometry="F1 M 374.666,80.6787C 384.066,86.333 386.828,97.6632 380.713,105.952C 377.421,110.425 372.181,113.066 366.614,113.729L 359.65,124.496L 335.686,110.13L 344.01,100.136C 342.514,95.2674 343.207,89.8868 346.494,85.4189C 352.614,77.1249 365.233,75.0243 374.666,80.6787 Z M 369.858,87.2072C 364.661,84.087 357.645,85.3519 354.177,90.0536C 350.729,94.7269 352.15,101.067 357.328,104.186C 362.52,107.306 369.557,106.036 373.01,101.34C 376.457,96.6436 375.057,90.3218 369.858,87.2072 Z "/>
+                    <GeometryDrawing Brush="{DynamicResource GridBorderBrush}" Geometry="F1 M 68.0515,89.1181C 58.6235,94.7726 55.8848,106.103 62.0048,114.391C 65.2902,118.865 70.5102,121.506 76.0768,122.146L 83.0662,132.936L 107.005,118.552L 98.7022,108.576C 100.177,103.691 99.5102,98.3263 96.2182,93.8584C 90.1035,85.5644 77.4782,83.4638 68.0515,89.1181 Z M 72.8582,95.6467C 78.0568,92.5265 85.0662,93.7914 88.5142,98.4704C 91.9675,103.166 90.5622,109.507 85.3635,112.626C 80.1715,115.746 73.1555,114.458 69.7075,109.779C 66.2595,105.083 67.6608,98.7613 72.8582,95.6467 Z "/>
+                    <GeometryDrawing Geometry="F1 M 454.181,288.607C 454.181,400.843 353.39,491.827 229.057,491.827C 104.718,491.827 3.92616,400.843 3.92616,288.607C 3.92616,176.37 104.718,85.3861 229.057,85.3861C 353.39,85.3861 454.181,176.37 454.181,288.607 Z ">
+                        <GeometryDrawing.Pen>
+                            <Pen Thickness="1.06459" LineJoin="Round" Brush="#FF445057"/>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Brush>
+                            <RadialGradientBrush RadiusX="2.35897" RadiusY="2.18973" Center="0.696335,0.277323" GradientOrigin="0.696335,0.277323">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFD3D6CF" Offset="0"/>
+                                    <GradientStop Color="#FF2D3436" Offset="1"/>
+                                </RadialGradientBrush.GradientStops>
+                                <RadialGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.696335" CenterY="0.277323" AngleX="-9.00162" AngleY="0"/>
+                                        <RotateTransform CenterX="0.696335" CenterY="0.277323" Angle="-60.1838"/>
+                                    </TransformGroup>
+                                </RadialGradientBrush.RelativeTransform>
+                            </RadialGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 227.062,0L 238.958,0L 238.958,68.7139L 227.062,68.7139L 227.062,0 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.122894,0.496658" EndPoint="1.04842,0.496658">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 208.374,68.1007L 257.645,68.1007L 257.645,86.5056L 208.374,86.5056L 208.374,68.1007 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.3131,0.633311" EndPoint="0.883751,0.633311">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.3131" CenterY="0.633311" AngleX="-2.93962" AngleY="0"/>
+                                        <RotateTransform CenterX="0.3131" CenterY="0.633311" Angle="-3.34854"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <DrawingGroup ClipGeometry="F1 M 290.161,178.336L 401.15,178.336L 401.15,263.577L 290.161,263.577L 290.161,178.336 Z ">
+                        <!--<DrawingGroup.Children>
+							<DrawingGroup>
+								<DrawingGroup.Transform>
+									<MatrixTransform Matrix="1.05704,0,0,1.13652,290.159,178.338"/>
+								</DrawingGroup.Transform>
+								<DrawingGroup.Children>
+									<ImageDrawing ImageSource="mine_files/image0.png" Rect="0,0,105,75"/>
+								</DrawingGroup.Children>
+							</DrawingGroup>
+						</DrawingGroup.Children>-->
+                    </DrawingGroup>
+                    <GeometryDrawing Geometry="F1 M 362.109,178.932L 347.02,189.478L 346.405,189.856C 345.729,190.258 345.046,190.676 344.505,191.205C 338.931,196.369 339.338,207.398 346.202,217.854C 353.953,229.709 367.066,236.31 375.29,232.421C 376.514,231.82 377.4,230.907 378.281,229.931L 393.978,219.002L 362.109,178.932 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.374381,0.368052" EndPoint="0.595595,0.368052">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.374381" CenterY="0.368052" AngleX="2.43979" AngleY="0"/>
+                                        <RotateTransform CenterX="0.374381" CenterY="0.368052" Angle="220.559"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FFA4A7A1" Geometry="F1 M 392.082,193.438C 399.88,205.303 399.552,218.082 391.353,221.977C 383.156,225.87 370.192,219.408 362.396,207.543C 354.598,195.677 354.926,182.9 363.124,179.005C 371.317,175.112 384.286,181.573 392.082,193.438 Z "/>
+                    <GeometryDrawing Geometry="F1 M 426.672,163.134L 374.817,196.875L 375.02,196.875C 373.796,197.488 373.729,199.945 375.02,201.784C 376.448,203.627 378.828,204.853 380.39,204.239C 380.525,204.239 380.661,204.239 380.796,203.627L 432.582,169.881L 426.672,163.134 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.471822,0.42281" EndPoint="0.657353,0.42281">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.471822" CenterY="0.42281" AngleX="23.0668" AngleY="0"/>
+                                        <RotateTransform CenterX="0.471822" CenterY="0.42281" Angle="59.4603"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FFA5A8A2" Geometry="F1 M 431.984,165.379C 433.405,167.508 433.348,169.802 431.848,170.498C 430.353,171.2 427.984,170.042 426.557,167.909C 425.134,165.781 425.192,163.491 426.692,162.789C 428.186,162.093 430.557,163.251 431.984,165.379 Z "/>
+                    <GeometryDrawing Geometry="F1 M 57.1035,199.505C 49.3062,211.37 49.6342,224.143 57.8328,228.043C 66.0302,231.936 78.9942,225.475 86.7902,213.61C 94.5875,201.738 94.2595,188.965 86.0662,185.071C 77.8688,181.177 64.8995,187.64 57.1035,199.505 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.99956,0.200181" EndPoint="2.11151,0.200181">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.99956" CenterY="0.200181" AngleX="1.71702" AngleY="0"/>
+                                        <RotateTransform CenterX="0.99956" CenterY="0.200181" Angle="145.911"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                    <GradientStop Color="#FF000000" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 70.9048,174.566L 85.9942,185.11L 86.6035,185.495C 87.2862,185.89 87.9622,186.308 88.5102,186.837C 94.0822,192.001 93.6715,203.031 86.8062,213.487C 79.0622,225.347 65.9422,231.948 57.7182,228.059C 56.4995,227.459 55.6142,226.544 54.7288,225.563L 39.0302,214.634L 70.9048,174.566 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.625629,0.368047" EndPoint="0.846818,0.368047">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.625629" CenterY="0.368047" AngleX="-2.43918" AngleY="0"/>
+                                        <RotateTransform CenterX="0.625629" CenterY="0.368047" Angle="-40.5559"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 40.9315,189.077C 33.1342,200.942 33.4568,213.716 41.6555,217.609C 49.8528,221.503 62.8168,215.042 70.6142,203.175C 78.4102,191.311 78.0875,178.537 69.8902,174.643C 61.6915,170.749 48.7288,177.211 40.9315,189.077 Z "/>
+                    <GeometryDrawing Geometry="F1 M 6.33817,158.768L 58.1968,192.514L 57.9942,192.514C 59.2182,193.126 59.2862,195.577 57.9942,197.421C 56.5662,199.259 54.1862,200.486 52.6235,199.873C 52.4888,199.873 52.3528,199.873 52.2128,199.259L 0.426163,165.519L 6.33817,158.768 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.528173,0.422844" EndPoint="0.713706,0.422844">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.528173" CenterY="0.422844" AngleX="-23.0728" AngleY="0"/>
+                                        <RotateTransform CenterX="0.528173" CenterY="0.422844" Angle="120.54"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 1.03017,161.018C -0.3965,163.146 -0.333832,165.434 1.16084,166.137C 2.66084,166.833 5.03017,165.674 6.45284,163.546C 7.8795,161.419 7.81683,159.124 6.32216,158.427C 4.82216,157.725 2.45284,158.89 1.03017,161.018 Z "/>
+                    <GeometryDrawing Brush="#FF2E3436" Geometry="F1 M 227.062,509.292L 238.958,509.292L 238.958,578L 227.062,578L 227.062,509.292 Z "/>
+                    <GeometryDrawing Brush="#FF2E3436" Geometry="F1 M 208.374,491.499L 257.645,491.499L 257.645,509.904L 208.374,509.904L 208.374,491.499 Z "/>
+                    <GeometryDrawing Geometry="F1 M 374.525,399.283C 382.322,387.418 382,374.645 373.801,370.75C 365.604,366.851 352.639,373.319 344.843,385.184C 337.046,397.049 337.369,409.823 345.566,413.716C 353.765,417.61 366.729,411.148 374.525,399.283 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.000426842,0.799818" EndPoint="1.11243,0.799818">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.000426842" CenterY="0.799818" AngleX="1.71314" AngleY="0"/>
+                                        <RotateTransform CenterX="0.000426842" CenterY="0.799818" Angle="-34.091"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                    <GradientStop Color="#FF000000" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 360.729,424.222L 345.639,413.678L 345.025,413.293C 344.348,412.898 343.666,412.48 343.124,411.951C 337.551,406.787 337.957,395.756 344.822,385.301C 352.572,373.441 365.686,366.84 373.91,370.727C 375.134,371.329 376.02,372.243 376.9,373.223L 392.604,384.154L 360.729,424.222 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.201723,0.675366" EndPoint="0.824309,0.675366">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.201723" CenterY="0.675366" AngleX="-2.45509" AngleY="0"/>
+                                        <RotateTransform CenterX="0.201723" CenterY="0.675366" Angle="-50.9951"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF5E6463" Geometry="F1 M 390.702,409.711C 398.5,397.846 398.172,385.072 389.973,381.179C 381.781,377.285 368.812,383.746 361.014,395.612C 353.218,407.477 353.546,420.251 361.744,424.144C 369.942,428.039 382.905,421.577 390.702,409.711 Z "/>
+                    <GeometryDrawing Geometry="F1 M 425.29,440.02L 373.437,406.274L 373.64,406.274C 372.416,405.662 372.348,403.211 373.64,401.367C 375.066,399.529 377.448,398.302 379.01,398.915C 379.145,398.915 379.281,398.915 379.416,399.529L 431.202,433.269L 425.29,440.02 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.471823,0.577163" EndPoint="0.718053,0.577163">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.471823" CenterY="0.577163" AngleX="-23.0676" AngleY="0"/>
+                                        <RotateTransform CenterX="0.471823" CenterY="0.577163" Angle="-59.4598"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF636867" Geometry="F1 M 430.604,437.77C 432.025,435.642 431.968,433.353 430.468,432.65C 428.973,431.955 426.604,433.114 425.177,435.242C 423.754,437.369 423.812,439.664 425.312,440.361C 426.806,441.063 429.177,439.898 430.604,437.77 Z "/>
+                    <!--<DrawingGroup>
+						<DrawingGroup.Transform>
+							<MatrixTransform Matrix="1.01338,0,0,1.10602,359.493,196.591"/>
+						</DrawingGroup.Transform>
+						<DrawingGroup.Children>
+							<ImageDrawing ImageSource="mine_files/image1.png" Rect="0,0,20,16"/>
+						</DrawingGroup.Children>
+					</DrawingGroup>-->
+                    <!--<DrawingGroup>
+						<DrawingGroup.Transform>
+							<MatrixTransform Matrix="1.05167,0,0,1.10722,358.426,400.805"/>
+						</DrawingGroup.Transform>
+						<DrawingGroup.Children>
+							<ImageDrawing ImageSource="mine_files/image2.png" Rect="0,0,20,26"/>
+						</DrawingGroup.Children>
+					</DrawingGroup>-->
+                    <GeometryDrawing Geometry="F1 M 77.3435,411.756C 69.5462,399.891 69.8688,387.112 78.0662,383.217C 86.2648,379.324 99.2289,385.785 107.025,397.65C 114.822,409.517 114.499,422.296 106.301,426.189C 98.1035,430.083 85.1342,423.621 77.3435,411.756 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.999532,0.799812" EndPoint="2.1115,0.799812">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.999532" CenterY="0.799812" AngleX="-1.71802" AngleY="0"/>
+                                        <RotateTransform CenterX="0.999532" CenterY="0.799812" Angle="214.089"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                    <GradientStop Color="#FF000000" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M 91.1395,436.695L 106.229,426.15L 106.838,425.765C 107.52,425.37 108.197,424.953 108.743,424.423C 114.317,419.26 113.91,408.229 107.046,397.773C 99.2955,385.914 86.1808,379.313 77.9568,383.201C 76.7328,383.802 75.8475,384.716 74.9622,385.691L 59.2648,396.626L 91.1395,436.695 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.779833,0.50416" EndPoint="1.47913,0.50416">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.779833" CenterY="0.50416" AngleX="2.24083" AngleY="0"/>
+                                        <RotateTransform CenterX="0.779833" CenterY="0.50416" Angle="213.209"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 61.1662,422.183C 53.3688,410.318 53.6915,397.545 61.8902,393.652C 70.0875,389.757 83.0568,396.219 90.8475,408.085C 98.6448,419.95 98.3222,432.723 90.1235,436.618C 81.9262,440.511 68.9622,434.049 61.1662,422.183 Z "/>
+                    <GeometryDrawing Geometry="F1 M 26.5768,452.493L 78.4315,418.746L 78.2288,418.746C 79.4528,418.134 79.5195,415.683 78.2288,413.839C 76.8008,412.001 74.4208,410.774 72.8582,411.388C 72.7235,411.388 72.5875,411.388 72.4528,412.001L 20.6608,445.742L 26.5768,452.493 Z ">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="0.528195,0.577149" EndPoint="0.713727,0.577149">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <SkewTransform CenterX="0.528195" CenterY="0.577149" AngleX="23.0721" AngleY="0"/>
+                                        <RotateTransform CenterX="0.528195" CenterY="0.577149" Angle="239.46"/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF000000" Offset="0"/>
+                                    <GradientStop Color="#FFD3D6CF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M 21.2648,450.242C 19.8382,448.115 19.8995,445.826 21.3955,445.123C 22.8955,444.427 25.2648,445.586 26.6862,447.714C 28.1142,449.842 28.0515,452.136 26.5568,452.834C 25.0568,453.53 22.6862,452.37 21.2648,450.242 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+</ResourceDictionary>

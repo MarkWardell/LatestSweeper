@@ -1,0 +1,447 @@
+﻿<Window x:Class="Sweeper.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:my="clr-namespace:Sweeper"
+        xmlns:vw="clr-namespace:Sweeper.Views"
+        xmlns:vm="clr-namespace:Sweeper.ViewModels"
+        xmlns:mouse="clr-namespace:Sweeper.Views"
+        xmlns:diag="clr-na
+                
+        space:System.Diagnostics;assembly=WindowsBase"
+        Title ="{Binding Path=Title, FallbackValue='MainWindowXX'}"         
+        MinHeight="450"  
+        MinWidth ="310"
+        Height="{Binding Height,Mode=TwoWay}"
+        Width ="{Binding Width, Mode=TwoWay}"
+       
+        
+        Background="{DynamicResource BoardBG}" Closing="Window_Closing_1" >
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding UndoAllOrLastCommand}"  
+                    CommandParameter="LAST"
+                    Key="Z" 
+                    Modifiers="Control"      />        
+       <KeyBinding Command="{Binding RedoAllOrLastCommand}"  
+                    CommandParameter="LAST"
+                    Key="Y" 
+                    Modifiers="Control"      />
+        <KeyBinding Command="{Binding UndoAllOrLastCommand}"  
+                    CommandParameter="ALL"
+                    Key="U" 
+                    Modifiers="Control"      />
+        <KeyBinding Command="{Binding RedoAllOrLastCommand}"  
+                    CommandParameter="ALL"
+                    Key="R" 
+                    Modifiers="Control"      />
+        <KeyBinding Command="{Binding ViewUndoRedoCommand}"                     
+                    Key="S" 
+                    Modifiers="Control"      />
+    </Window.InputBindings>
+    <Window.Resources>
+
+        <sys:Double x:Key="SmileySize">40</sys:Double>
+        <sys:Double x:Key="LogFontSize">10</sys:Double>
+        <sys:Double x:Key="StatFontSize">8</sys:Double>
+
+
+        <vw:BrushConverter x:Key="formatter"/>
+        <vw:FaceButtonConverter x:Key="faceselector"/>
+        <vw:ThemeChecker x:Key="themechecker"/>
+        <Style x:Key="MenuBarTrigger" TargetType="{x:Type Menu}">
+            <!--<Setter Property="BorderBrush" Value="{Binding GridBorderBrush}"/>-->
+            <Setter Property="BorderThickness" Value="1"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property = "BorderBrush" Value="{DynamicResource HiGridBorderBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+        <Style x:Key="ExpanderTrigger" TargetType="{x:Type Expander}">
+
+            <Setter Property="BorderBrush" Value="{DynamicResource GridBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property = "BorderBrush" Value="{DynamicResource HiGridBorderBrush}"/>
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+        <Style x:Key="MenuTrigger" TargetType="{x:Type MenuItem}">
+            <Setter Property="Foreground" Value="{DynamicResource BoardBG}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <!--<Setter Property="BorderBrush" Value="{DynamicResource GridBorderBrush}"/>-->
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="1"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property = "BorderBrush" Value="{DynamicResource HiGridBorderBrush}"/>
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ButtonTrigger" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="{DynamicResource FG}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BORDER}"/>
+            <Setter Property="Foreground" Value="{DynamicResource FG}"/>
+            <Setter Property="Background" Value="{DynamicResource BoardBG}"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property = "BorderBrush" Value="{DynamicResource HiGridBorderBrush}"/>
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+        <!--Below is an error in Debug Window-->
+        <!--System.Windows.Data Error: 40 : BindingExpression path error: 'Value' property not found on 'object' 
+        ''SweeperViewModel' (HashCode=33108977)'. BindingExpression:Path=Value; 
+          DataItem='SweeperViewModel' (HashCode=33108977); 
+          target element is 'Rectangle' (Name=''); 
+          target property is 'Fill' (type 'Brush')
+         -->
+        <Style x:Key="GamePieceTrigger" TargetType="{x:Type Rectangle}" >
+            <Setter Property="Stroke" Value="{DynamicResource GridBorderBrush}"/>
+            <!--<Setter Property="Fill" Value="{DynamicResource Value, Converter={StaticResource formatter}}"/>-->
+            <Setter Property="Tag" Value="{Binding }"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Stroke" Value="{DynamicResource HiGridBorderBrush}"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="CounterStyle" TargetType="{x:Type Border}" >
+            <Setter Property="BorderBrush" Value="{DynamicResource BORDER}"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width"  Value="66"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+
+        <Style x:Key="CounterLabel" TargetType="{x:Type Label}">
+
+            <Setter Property="IsEnabled" Value="{Binding GameBoardEnabled}"/>
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="Background" Value="{DynamicResource COUNTER_BG}"/>
+            <Setter Property="Foreground" Value="{DynamicResource BoardBG}"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+
+        </Style>
+        <Style x:Key="SectionBorder" TargetType="{x:Type Border}">
+            <Setter Property="BorderBrush" Value="{DynamicResource BORDER}"/>
+            <Setter Property="BorderThickness" Value="7"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="{DynamicResource BORDERINTERIOR}"/>
+            <Setter Property="CornerRadius" Value="5"/>
+
+        </Style>
+        <Style x:Key="MenuStyle" TargetType="{x:Type MenuItem}">
+            <Setter Property="Background" Value="{DynamicResource INTERIOR}"/>
+            <Setter Property="Foreground" Value="{DynamicResource BoardBG}"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <!--<SolidColorBrush x:Key="GridTextFG" Color="AntiqueWhite"/>-->
+        <!-- <SolidColorBrush x:Key="DEFAULT_BOARDBG" Color="White"/> -->
+
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:SweeperViewModel/>
+    </Window.DataContext>
+
+    <!--Tag="{Binding Value}"-->
+    <Grid  MinWidth="280" MinHeight="260" x:Name="GameGrid" Margin="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+        <Grid.Resources>
+            <DataTemplate x:Key="GamePieceTemplate">
+                <Border  MinWidth="10" MinHeight="10" Padding="0" BorderBrush="{DynamicResource GridBorderBrush}"  >
+                    <Rectangle   Style="{DynamicResource GamePieceTrigger}"
+                                 ToolTip="{Binding ActualValue}"
+                                 Fill ="{Binding Value, Converter={StaticResource formatter}}"
+                                
+                                 StrokeThickness="1"  
+                                 vw:MouseBehavior.MouseLeftButtonDownCommand="{Binding MouseLeftButtonDownCommand}"
+                                 vw:MouseBehavior.MouseLeftButtonUpCommand="{Binding MouseLeftButtonUpCommand}"
+                                 vw:MouseBehavior.MouseEnterCommand="{Binding MouseEnterCommand}"
+                                 vw:MouseBehavior.MouseLeaveCommand="{Binding MouseLeaveCommand}"
+                                 vw:MouseBehavior.MouseRightButtonUpCommand="{Binding MouseRightButtonUpCommand}"           
+                                 
+                     />
+                </Border>
+            </DataTemplate>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <!--Menu  Row -->
+            <RowDefinition Height="2" />
+            <!--Space Row -->
+            <RowDefinition Height="65" />
+            <!--Mine/Smiley/Time Row -->
+            <RowDefinition Height="2" />
+            <!--Space Row-->
+            <RowDefinition  />
+            <!--Grid Row  -->
+            <RowDefinition Height="2" />
+            <!--Space Row-->
+            <RowDefinition Height="40" />
+            <!--Space Row-->
+            <RowDefinition Height="2" />
+            <!--Space Row-->
+            <RowDefinition Height="{Binding DebugRow, FallbackValue = *}"/>
+        </Grid.RowDefinitions>
+
+        <Border Style="{DynamicResource SectionBorder}" >
+            <Menu   
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"          
+                Background="{DynamicResource BORDERINTERIOR}"  
+                FontSize="12" >
+
+
+                <MenuItem  Header="Game"  
+                           StaysOpenOnClick="True" 
+                           Foreground="{DynamicResource HiGridBorderBrush}">
+
+                    <MenuItem Header="New Game" 
+                              Style="{DynamicResource MenuStyle}"   
+                              Command="{Binding NewGameCommand}"
+                              CommandParameter="SAMEGAME"
+                              Foreground="{DynamicResource BoardBG}"/>
+                    <MenuItem Header="Beginner" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding NewGameCommand}"
+                              CommandParameter="BEGINNER"
+                              Foreground="{DynamicResource BoardBG}"
+                              IsChecked="{Binding IsBeginner, Mode=OneWay}" />
+                    <MenuItem Header="Intermediate" 
+                              Style="{DynamicResource MenuStyle}"     
+                              Command="{Binding NewGameCommand}" 
+                              CommandParameter="INTERMEDIATE"
+                              Foreground="{DynamicResource BoardBG}"
+                              IsChecked="{Binding IsIntermediate, Mode=OneWay}" />
+                    <MenuItem Header="Advanced" 
+                              Style="{DynamicResource MenuStyle}"                              
+                              Command="{Binding NewGameCommand}" 
+                              CommandParameter="ADVANCED"
+                              Foreground="{DynamicResource BoardBG}"
+                              IsChecked="{Binding IsAdvanced, Mode=OneWay}" />
+                    <!--<MenuItem Header="Custom" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding NewGameCommand}"  
+                              CommandParameter="CUSTOM"
+                              Foreground="{DynamicResource BoardBG}"
+                              IsChecked="{Binding IsCustom, Mode=OneWay}"/>-->
+                    <MenuItem Header="Log Window" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding GameLogShownCommand}"  
+                              Foreground="{DynamicResource BoardBG}"
+                              IsChecked="{Binding IsLogWindowShown, Mode=TwoWay}"/>
+                    
+                    <!--<MenuItem Header="Options" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding GameOptionsCommand}"
+                              Foreground="{DynamicResource BoardBG}"/>-->
+
+                    <MenuItem Header="Undo..." 
+                              Style="{DynamicResource MenuStyle}" 
+                              Foreground="{DynamicResource BoardBG}">
+                        <MenuItem Header="Undo All" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding UndoAllOrLastCommand}"
+                              CommandParameter="ALL"
+                              Foreground="{DynamicResource BoardBG}"
+                              InputGestureText="Ctrl+A"/>
+                        <MenuItem Header="Undo Last" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding UndoAllOrLastCommand}"
+                              CommandParameter="LAST"
+                              InputGestureText="Ctrl+Z"
+                              Foreground="{DynamicResource BoardBG}"/>
+                    </MenuItem>
+                    <MenuItem Header="Redo..." 
+                              Style="{DynamicResource MenuStyle}" 
+                              Foreground="{DynamicResource BoardBG}"
+                              >
+                        <MenuItem Header="Redo All" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding RedoAllOrLastCommand}"
+                              CommandParameter="ALL"
+                              InputGestureText="Ctrl+R"
+                              Foreground="{DynamicResource BoardBG}"/>
+                        <MenuItem Header="Redo Last" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding RedoAllOrLastCommand}"
+                              CommandParameter="LAST"
+                              InputGestureText="Ctrl+Y"
+                              Foreground="{DynamicResource BoardBG}"/>
+
+                    </MenuItem>
+
+                    <MenuItem Header="View UndoRedo Stacks" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding ViewUndoRedoCommand}" 
+                              InputGestureText="Ctrl+S"/>
+                    <MenuItem Header="Exit" 
+                              Style="{DynamicResource MenuStyle}" 
+                              Command="{Binding GameExitCommand}" />
+
+                </MenuItem>
+                <MenuItem  Header="Themes"  
+                           StaysOpenOnClick="True" 
+                           Foreground="{DynamicResource HiGridBorderBrush}"
+                           ItemsSource="{DynamicResource Themes}">
+                    <MenuItem.ItemContainerStyle>
+                        <Style TargetType="MenuItem">
+
+                            <Setter Property="IsChecked" Value="{Binding Converter={StaticResource themechecker}, Mode=OneWay}"/>
+                            <Setter Property="Command" 
+                                    Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=MenuItem}, Path=DataContext.GameThemeCommand}" />
+                            <Setter Property="CommandParameter" Value="{Binding}" />
+                            <Setter Property="Background" Value="{DynamicResource INTERIOR}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource BoardBG}"/>
+                            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        </Style>
+                    </MenuItem.ItemContainerStyle>
+
+
+                </MenuItem>
+                <MenuItem Header="About" 
+                              
+                              Command="{Binding AboutCommand}"  
+                             Foreground="{DynamicResource HiGridBorderBrush}"
+                              x:Name="mnuAbout" />
+            </Menu>
+
+        </Border>
+        <Border Style="{DynamicResource SectionBorder}" Grid.Row="2"   >
+            
+            <Border  >
+                <Grid >
+                    <Border HorizontalAlignment="Left" 
+                            Style="{DynamicResource SectionBorder}" 
+                            Margin="20,0,0,0" Width="75" BorderThickness="4"
+                            Height="44">
+                       
+                        <Label  x:Name="tbMines" 
+                                  
+                                  Style="{DynamicResource CounterLabel}"
+                                  Content="{Binding Mines}" 
+                                  VerticalContentAlignment="Center" 
+                                  HorizontalContentAlignment="Center"
+                                  ToolTip="Mines Remaining" >
+
+                        </Label>
+                    </Border>
+
+                    <Rectangle Style="{DynamicResource GamePieceTrigger}" 
+                                        Fill="{Binding GameState,Converter={StaticResource faceselector}  }" 
+                                        HorizontalAlignment="Center"  
+                                        Height="{DynamicResource SmileySize}" 
+                                        VerticalAlignment="Stretch" 
+                                        Width="{DynamicResource SmileySize}" 
+                                        vw:MouseBehavior.MouseLeftButtonDownCommand="{Binding PressSmileyCommand}"
+                                        vw:MouseBehavior.MouseLeftButtonUpCommand="{Binding UnPressSmileyCommand}"
+                                        vw:MouseBehavior.MouseLeaveCommand="{Binding LeaveSmileyCommand}"
+                               />
+                    <!--vw:MouseBehavior.MouseLeaveCommand="{Binding LeaveSmileyCommand}"
+                    TODO Add this back in was a problem after game was done
+                    -->
+                    <Border Style="{DynamicResource SectionBorder}" 
+                            HorizontalAlignment="Right" 
+                            Width="75" Height="44" BorderThickness="4"
+                            Margin="0,0,20,0" >
+                        <!--<Border.Effect>
+                            <DropShadowEffect/>
+                        </Border.Effect>-->
+                        <Label x:Name="tbTime"  
+                                 Style="{DynamicResource CounterLabel}"                              
+                                 Content="{Binding Time}"  
+                                 VerticalContentAlignment="Center" 
+                                 HorizontalContentAlignment="Center"
+                                 ToolTip="Game Time" >
+                        </Label>
+                    </Border>
+                </Grid>
+            </Border>
+        </Border>
+
+        <Border  Style="{DynamicResource SectionBorder}" 
+                 x:Name="PBorder"   
+                 Grid.Row="4" 
+                 Background="{DynamicResource INTERIOR}"  >
+            <ItemsControl  IsEnabled="{Binding GameBoardEnabled}" 
+                           x:Name="_board" 
+                           ItemsSource ="{Binding Path=Board}" 
+                           ItemTemplate= "{DynamicResource GamePieceTemplate}"  >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!--<StackPanel/>-->
+                        <UniformGrid                          
+                            Columns="{Binding Columns}" 
+                            Rows   ="{Binding Rows}"  >
+                        </UniformGrid>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Border>
+        <Grid Grid.Row="6">
+
+            <Border  Height="Auto" Style="{DynamicResource SectionBorder}" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <Expander  BorderThickness="1" VerticalAlignment="Center" x:Name="myExpander"  IsExpanded="{Binding IsLogWindowShown}"   Header="" Background="{DynamicResource HiGridBorderBrush}" Foreground="{DynamicResource INTERIOR}" FontSize="8"  Height="17" ExpandDirection="Up" Width="24" >
+
+                    </Expander>
+                    <Label  Foreground="{DynamicResource HiGridBorderBrush}" FontSize="{DynamicResource StatFontSize}" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Left">View Log</Label>
+                    <Label  Foreground="{DynamicResource HiGridBorderBrush}" FontSize="{DynamicResource StatFontSize}" VerticalAlignment="Center" >Total Msg:</Label>
+                    <Label  Foreground="{DynamicResource HiGridBorderBrush}" FontSize="{DynamicResource StatFontSize}"  Content="{Binding CountCmdItems}" Width="30"></Label>
+                    <Label  Foreground="{DynamicResource HiGridBorderBrush}"  FontSize="{DynamicResource StatFontSize}" Width="37" >Mouse:</Label>
+                    <Label  Foreground="{DynamicResource HiGridBorderBrush}"  FontSize="{DynamicResource StatFontSize}" Content="{Binding CountMouseCmdItems}" Width="30"></Label>
+                    <Label  Foreground="{DynamicResource HiGridBorderBrush}"  FontSize="{DynamicResource StatFontSize}" Content="Game:"></Label>
+                    <Label  Foreground="{DynamicResource HiGridBorderBrush}"   FontSize="{DynamicResource StatFontSize}" Content="{Binding CountGameCmdItems}" Width="30" HorizontalAlignment="Center"></Label>
+
+                </StackPanel>
+
+            </Border>
+        </Grid>
+
+        <Border Background="{DynamicResource BORDERINTERIOR}" Grid.Row="8" Style="{DynamicResource SectionBorder}" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20">
+                    </RowDefinition >
+                    <RowDefinition Height="*">
+                    </RowDefinition >
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" VerticalAlignment="Stretch" 
+                        BorderThickness="2" 
+                        Style="{DynamicResource SectionBorder}">
+                    <StackPanel Orientation="Horizontal" >
+                        <Button FontSize="{DynamicResource StatFontSize}"  
+                                Foreground="{DynamicResource HiGridBorderBrush}" 
+                                Background="{DynamicResource INTERIOR}" 
+                                Command="{Binding GameClearMessages}">X Clear Log</Button>
+                        <Label FontSize="{DynamicResource StatFontSize}"  
+                                 Foreground="{DynamicResource FG}" Visibility="Hidden"
+                               >XLo</Label>
+                        <CheckBox Width="75" HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="{DynamicResource HiGridBorderBrush}" FontSize="{DynamicResource StatFontSize}" IsChecked="True" IsEnabled="False">Log All</CheckBox>
+                        <CheckBox Width="75" HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="{DynamicResource HiGridBorderBrush}" FontSize="{DynamicResource StatFontSize}" IsChecked="True" IsEnabled="False">Log Mouse</CheckBox>
+                        <CheckBox Width="75" HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="{DynamicResource HiGridBorderBrush}" FontSize="{DynamicResource StatFontSize}" IsChecked="True" IsEnabled="False">Log Game</CheckBox>
+
+                    </StackPanel>
+                </Border>
+                <ListBox  Grid.Row="1" FontSize="{DynamicResource LogFontSize}" 
+                         Background ="{DynamicResource INTERIOR}" 
+                         Foreground="{DynamicResource BoardBG}" 
+                         ItemsSource="{Binding CmdItems}" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
