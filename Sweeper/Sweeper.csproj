@@ -80,10 +80,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ApplicationThemeEventArg.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,14 +87,14 @@
     </Compile>
     <Compile Include="ViewModels\GameOptions.cs" />
     <Compile Include="ViewModels\GamePieceViewModel\GamePiece.CMDS.cs" />
-    <Compile Include="ViewModels\Implementations\NullDialogService.cs" />
-    <Compile Include="ViewModels\Implementations\NullSoundAdornment.cs" />
-    <Compile Include="ViewModels\Implementations\RealDialogService.cs" />
-    <Compile Include="ViewModels\Implementations\SoundAdornmenRes.cs" />
-    <Compile Include="ViewModels\Implementations\SoundAdornment.cs" />
-    <Compile Include="ViewModels\Interfaces\IAdornGameWithSounds.cs" />
-    <Compile Include="ViewModels\Interfaces\IChangeTheme.cs" />
-    <Compile Include="ViewModels\Interfaces\IDialogService.cs" />
+    <Compile Include="Services\Implementations\NullDialogService.cs" />
+    <Compile Include="Services\Implementations\NullSoundAdornment.cs" />
+    <Compile Include="Services\Implementations\RealDialogService.cs" />
+    <Compile Include="Services\Implementations\SoundAdornmenRes.cs" />
+    <Compile Include="Services\Implementations\SoundAdornment.cs" />
+    <Compile Include="Services\Interfaces\IAdornGameWithSounds.cs" />
+    <Compile Include="Services\Interfaces\IChangeTheme.cs" />
+    <Compile Include="Services\Interfaces\IDialogService.cs" />
     <Compile Include="ViewModels\CommandItem.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -125,10 +121,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\BRUSH-FACES.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
