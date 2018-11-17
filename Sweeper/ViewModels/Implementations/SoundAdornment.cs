@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 
 using System.Diagnostics;
-
+using Sweeper.ViewModels.Interfaces;
 
 namespace Sweeper.ViewModels
 {

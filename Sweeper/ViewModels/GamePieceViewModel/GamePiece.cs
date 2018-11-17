@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Shapes;
 using Sweeper.ViewModels;
 using System.Windows.Media;
+using Sweeper.ViewModels.Interfaces;
 
 namespace Sweeper.ViewModels
 {

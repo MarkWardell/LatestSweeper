@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sweeper.ViewModels
+namespace Sweeper.ViewModels.Interfaces
 {
     public interface IAdornGameWithSounds
     {

@@ -1,4 +1,6 @@
 ﻿#define LINQ
+using Sweeper.ViewModels.Inerfaces;
+using Sweeper.ViewModels.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

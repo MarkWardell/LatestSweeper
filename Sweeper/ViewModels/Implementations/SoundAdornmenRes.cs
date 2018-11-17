@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 using System.Diagnostics;
 using System.Media;
-
+using Sweeper.ViewModels.Interfaces;
 
 namespace Sweeper.ViewModels
 {

@@ -44,21 +44,21 @@ namespace Sweeper.Views
         {
             try
             {
-                PieceBrushes[(int)GameConstants.PieceValues.BLANK] = new DrawingBrush(null);
-                PieceBrushes[(int)GameConstants.PieceValues.BUTTON] = (DrawingBrush)Application.Current.FindResource("BUTTON");
-                PieceBrushes[(int)GameConstants.PieceValues.PRESSED] = (DrawingBrush)Application.Current.FindResource("PRESSED");
-                PieceBrushes[(int)GameConstants.PieceValues.FLAGGED] = (DrawingBrush)Application.Current.FindResource("FLAG");
-                PieceBrushes[(int)GameConstants.PieceValues.WRONGCHOICE] = (DrawingBrush)Application.Current.FindResource("P_MINESHADOW-WRONG");
-                PieceBrushes[(int)GameConstants.PieceValues.MINE] = (DrawingBrush)Application.Current.FindResource("P_MINE");
-                PieceBrushes[(int)GameConstants.PieceValues.NOMINE] = (DrawingBrush)Application.Current.FindResource("P_BLANK");//new DrawingBrush(null)
-                PieceBrushes[(int)GameConstants.PieceValues.ONEMINE] = (DrawingBrush)Application.Current.FindResource("P_ONE");
-                PieceBrushes[(int)GameConstants.PieceValues.TWOMINE] = (DrawingBrush)Application.Current.FindResource("P_TWO");
-                PieceBrushes[(int)GameConstants.PieceValues.THREEMINE] = (DrawingBrush)Application.Current.FindResource("P_THREE");
-                PieceBrushes[(int)GameConstants.PieceValues.FOURMINE] = (DrawingBrush)Application.Current.FindResource("P_FOUR");
-                PieceBrushes[(int)GameConstants.PieceValues.FIVEMINE] = (DrawingBrush)Application.Current.FindResource("P_FIVE");
-                PieceBrushes[(int)GameConstants.PieceValues.SIXMINE] = (DrawingBrush)Application.Current.FindResource("P_SIX");
-                PieceBrushes[(int)GameConstants.PieceValues.SEVENMINE] = (DrawingBrush)Application.Current.FindResource("P_SEVEN");
-                PieceBrushes[(int)GameConstants.PieceValues.EIGHTMINE] = (DrawingBrush)Application.Current.FindResource("P_EIGHT");
+                PieceBrushes[(int)GameConstants.PieceValues.BLANK       ] = new DrawingBrush(null);
+                PieceBrushes[(int)GameConstants.PieceValues.BUTTON      ] = (DrawingBrush)Application.Current.FindResource("BUTTON");
+                PieceBrushes[(int)GameConstants.PieceValues.PRESSED     ] = (DrawingBrush)Application.Current.FindResource("PRESSED");
+                PieceBrushes[(int)GameConstants.PieceValues.FLAGGED     ] = (DrawingBrush)Application.Current.FindResource("FLAG");
+                PieceBrushes[(int)GameConstants.PieceValues.WRONGCHOICE ] = (DrawingBrush)Application.Current.FindResource("P_MINESHADOW-WRONG");
+                PieceBrushes[(int)GameConstants.PieceValues.MINE        ] = (DrawingBrush)Application.Current.FindResource("P_MINE");
+                PieceBrushes[(int)GameConstants.PieceValues.NOMINE      ] = (DrawingBrush)Application.Current.FindResource("P_BLANK");//new DrawingBrush(null)
+                PieceBrushes[(int)GameConstants.PieceValues.ONEMINE     ] = (DrawingBrush)Application.Current.FindResource("P_ONE");
+                PieceBrushes[(int)GameConstants.PieceValues.TWOMINE     ] = (DrawingBrush)Application.Current.FindResource("P_TWO");
+                PieceBrushes[(int)GameConstants.PieceValues.THREEMINE   ] = (DrawingBrush)Application.Current.FindResource("P_THREE");
+                PieceBrushes[(int)GameConstants.PieceValues.FOURMINE    ] = (DrawingBrush)Application.Current.FindResource("P_FOUR");
+                PieceBrushes[(int)GameConstants.PieceValues.FIVEMINE    ] = (DrawingBrush)Application.Current.FindResource("P_FIVE");
+                PieceBrushes[(int)GameConstants.PieceValues.SIXMINE     ] = (DrawingBrush)Application.Current.FindResource("P_SIX");
+                PieceBrushes[(int)GameConstants.PieceValues.SEVENMINE   ] = (DrawingBrush)Application.Current.FindResource("P_SEVEN");
+                PieceBrushes[(int)GameConstants.PieceValues.EIGHTMINE   ] = (DrawingBrush)Application.Current.FindResource("P_EIGHT");
                 
             }
             catch (Exception E)

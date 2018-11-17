@@ -167,8 +167,8 @@ namespace Sweeper.ViewModels
         private void ExecuteAboutCommand()
         {
             Debug.WriteLine("About : ");
-            Window w = new About();
-            w.ShowDialog();          
+            this.dialogService.ShowAbout();
+               
         }
         private bool CanExecuteAboutCommand()
         {
@@ -533,16 +533,17 @@ namespace Sweeper.ViewModels
             //{
             //    urVm = new UndoRedoViewModel();
             //}
-            
+
             //UndoRedoView urv = new UndoRedoView();
-            
+
             //UrVm.RefreshCommand = RefreshStacksCommand;
             //UrVm.RedoCommand = this.RedoAllOrLastCommand;
             //UrVm.UndoCommand = this.UndoAllOrLastCommand;
             //RefreshStacksCommand.Execute(null);
-            UrV.DataContext = UrVm;
+            dialogService.ShowUndoRedo(UrVm);
+          //  UrV.DataContext = UrVm;
             
-            UrV.Show();
+         //   UrV.Show();
             Debug.WriteLine(_viewUndoRedoCommand.DisplayText);
         }
         

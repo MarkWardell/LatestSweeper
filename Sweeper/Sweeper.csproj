@@ -90,38 +90,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\GameOptions.cs" />
-    <Compile Include="ViewModels\GamePiece.CMDS.cs" />
+    <Compile Include="ViewModels\GamePieceViewModel\GamePiece.CMDS.cs" />
+    <Compile Include="ViewModels\Implementations\NullDialogService.cs" />
+    <Compile Include="ViewModels\Implementations\NullSoundAdornment.cs" />
+    <Compile Include="ViewModels\Implementations\RealDialogService.cs" />
+    <Compile Include="ViewModels\Implementations\SoundAdornmenRes.cs" />
+    <Compile Include="ViewModels\Implementations\SoundAdornment.cs" />
     <Compile Include="ViewModels\Interfaces\IAdornGameWithSounds.cs" />
     <Compile Include="ViewModels\Interfaces\IChangeTheme.cs" />
     <Compile Include="ViewModels\Interfaces\IDialogService.cs" />
-    <Compile Include="ViewModels\Interfaces\IModifyCustomGame.cs" />
-    <Compile Include="ViewModels\Interfaces\IOptions.cs" />
-    <Compile Include="ViewModels\Interfaces\NullDialogService.cs" />
-    <Compile Include="ViewModels\Interfaces\NullSoundAdornment.cs" />
-    <Compile Include="ViewModels\Interfaces\RealDialogService.cs" />
-    <Compile Include="ViewModels\Interfaces\SoundAdornmenRes.cs" />
-    <Compile Include="ViewModels\Interfaces\SoundAdornment.cs" />
     <Compile Include="ViewModels\CommandItem.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\SweeperViewModel.CMDS.cs" />
+    <Compile Include="ViewModels\SweeperViewModel\SweeperViewModel.CMDS.cs" />
     <Compile Include="ViewModels\UndoRedoViewModel.cs" />
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Converters\BrushConverter.cs" />
     <Compile Include="ViewModels\GameConstants.cs" />
-    <Compile Include="ViewModels\GamePiece.cs" />
+    <Compile Include="ViewModels\GamePieceViewModel\GamePiece.cs" />
     <Compile Include="Views\Converters\FaceButtonConverterII.cs" />
     <Compile Include="Views\Behaviors\MouseBehavior.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
-    <Compile Include="ViewModels\SweeperViewModel.cs" />
+    <Compile Include="ViewModels\SweeperViewModel\SweeperViewModel.cs" />
     <Compile Include="Views\Converters\ThemeChecker.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UndoRedoView.xaml.cs">
       <DependentUpon>UndoRedoView.xaml</DependentUpon>
@@ -171,10 +166,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Page1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -309,7 +300,6 @@
     <Folder Include="Resources\DESIGN\DEFAULT\" />
     <Folder Include="Resources\DESIGN\KEYWEST\" />
     <Folder Include="Resources\DESIGN\POWDER\" />
-    <Folder Include="Views\Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
