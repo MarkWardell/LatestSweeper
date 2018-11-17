@@ -4,7 +4,7 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              
              xmlns:myApp="clr-namespace:Sweeper"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         
         <ResourceDictionary >
