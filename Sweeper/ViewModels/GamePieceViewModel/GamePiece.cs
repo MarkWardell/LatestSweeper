@@ -1,16 +1,7 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Shapes;
-using Sweeper.ViewModels;
-using System.Windows.Media;
 using Sweeper.ViewModels.Interfaces;
 
 namespace Sweeper.ViewModels
