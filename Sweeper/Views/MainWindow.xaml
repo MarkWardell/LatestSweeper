@@ -49,7 +49,6 @@
         <vw:FaceButtonConverter x:Key="faceselector"/>
         <vw:ThemeChecker x:Key="themechecker"/>
         <Style x:Key="MenuBarTrigger" TargetType="{x:Type Menu}">
-            <!--<Setter Property="BorderBrush" Value="{Binding GridBorderBrush}"/>-->
             <Setter Property="BorderThickness" Value="1"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="true">
@@ -73,7 +72,6 @@
         <Style x:Key="MenuTrigger" TargetType="{x:Type MenuItem}">
             <Setter Property="Foreground" Value="{DynamicResource BoardBG}"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <!--<Setter Property="BorderBrush" Value="{DynamicResource GridBorderBrush}"/>-->
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Padding" Value="1"/>
 
@@ -150,8 +148,7 @@
             <Setter Property="Foreground" Value="{DynamicResource BoardBG}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
-        <!--<SolidColorBrush x:Key="GridTextFG" Color="AntiqueWhite"/>-->
-        <!-- <SolidColorBrush x:Key="DEFAULT_BOARDBG" Color="White"/> -->
+       
 
     </Window.Resources>
     <Window.DataContext>
@@ -164,9 +161,7 @@
             <DataTemplate x:Key="GamePieceTemplate">
                 <Border  MinWidth="10" MinHeight="10" Padding="0" BorderBrush="{DynamicResource GridBorderBrush}"  >
                     <Rectangle   Style="{DynamicResource GamePieceTrigger}"
-                                 ToolTip="{Binding ActualValue}"
                                  Fill ="{Binding Value, Converter={StaticResource formatter}}"
-                                
                                  StrokeThickness="1"  
                                  vw:MouseBehavior.MouseLeftButtonDownCommand="{Binding MouseLeftButtonDownCommand}"
                                  vw:MouseBehavior.MouseLeftButtonUpCommand="{Binding MouseLeftButtonUpCommand}"
@@ -245,11 +240,6 @@
                               Foreground="{DynamicResource BoardBG}"
                               IsChecked="{Binding IsLogWindowShown, Mode=TwoWay}"/>
                     
-                    <!--<MenuItem Header="Options" 
-                              Style="{DynamicResource MenuStyle}" 
-                              Command="{Binding GameOptionsCommand}"
-                              Foreground="{DynamicResource BoardBG}"/>-->
-
                     <MenuItem Header="Undo..." 
                               Style="{DynamicResource MenuStyle}" 
                               Foreground="{DynamicResource BoardBG}">
@@ -351,16 +341,12 @@
                                         vw:MouseBehavior.MouseLeftButtonUpCommand="{Binding UnPressSmileyCommand}"
                                         vw:MouseBehavior.MouseLeaveCommand="{Binding LeaveSmileyCommand}"
                                />
-                    <!--vw:MouseBehavior.MouseLeaveCommand="{Binding LeaveSmileyCommand}"
-                    TODO Add this back in was a problem after game was done
-                    -->
+                   
                     <Border Style="{DynamicResource SectionBorder}" 
                             HorizontalAlignment="Right" 
                             Width="75" Height="44" BorderThickness="4"
                             Margin="0,0,20,0" >
-                        <!--<Border.Effect>
-                            <DropShadowEffect/>
-                        </Border.Effect>-->
+                        
                         <Label x:Name="tbTime"  
                                  Style="{DynamicResource CounterLabel}"                              
                                  Content="{Binding Time}"  
