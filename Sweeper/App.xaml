@@ -6,7 +6,7 @@
              xmlns:myApp="clr-namespace:Sweeper"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-        
+      
         <ResourceDictionary >
             
             <ResourceDictionary.MergedDictionaries>

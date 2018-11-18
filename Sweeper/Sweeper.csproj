@@ -55,7 +55,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Minesweeper_Icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -181,6 +182,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <DesignData Include="Resources\DESIGN\DesignItems.design" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -209,7 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Sounds\SWOOSH.wav" />
-    <Resource Include="Minesweeper_Icon.ico" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\POWDER\Flag.png" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\POWDER\Pressed.png" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\KEYWEST\Button.png" />
