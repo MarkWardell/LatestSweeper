@@ -24,6 +24,8 @@ namespace Sweeper.ViewModels
         public SweeperViewModel()
             : this(new RealDialogService(), new SoundAdornmentRes())
         {
+            //if (App.ShowCommandStackWindowOnStartup)
+            //    this.ViewUndoRedoCommand.Execute(null);
 
         }
         /// <summary>

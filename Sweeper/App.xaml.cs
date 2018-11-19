@@ -27,8 +27,15 @@ namespace Sweeper
             get { return mySweeperApp; }
             
         }
+        private static bool showCommandStackWindowOnStartup = false;
+        public static  bool ShowCommandStackWindowOnStartup
+        {
+            get { return showCommandStackWindowOnStartup; }
+        }
         public App()
         {
+            var v = ConfigurationManager.AppSettings["ShowCommandStackWindowOnStartup"];
+            App.showCommandStackWindowOnStartup = Boolean.Parse(v);
             mySweeperApp = this;
         }
         private string theme = "DEFAULT";
@@ -86,8 +93,7 @@ namespace Sweeper
 
             Uri u = new Uri("Resources/"+p+"-THEME.xaml",
                     UriKind.Relative);
-            //Uri u = new Uri("Resources//IMAGE-ITEMS//THEMES//CHOCALATE//THEME.xaml",
-            //        UriKind.Relative);
+      
             myresourcedictionary.Source = u;
 
             Application.Current.Resources.MergedDictionaries.Clear();

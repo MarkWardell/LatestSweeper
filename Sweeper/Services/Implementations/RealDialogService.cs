@@ -31,6 +31,7 @@ namespace Sweeper.ViewModels
             UndoRedoView.DataContext = vm;
 
             UndoRedoView.Show();
+            
         }
 
         public void ShowLogoptions()

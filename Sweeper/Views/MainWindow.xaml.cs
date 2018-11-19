@@ -30,6 +30,7 @@ namespace Sweeper.Views
             this.DataContext = game;
             game.NewGameCommand.Execute("BEGINNER");           
         }
+        
 
         #region DISPOSE
         /// <summary>
@@ -66,6 +67,13 @@ namespace Sweeper.Views
         private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var cm = DataContext as SweeperViewModel;
+            if (App.ShowCommandStackWindowOnStartup)
+               cm.ViewUndoRedoCommand.Execute(null);
         }
     }
 }
