@@ -227,6 +227,7 @@
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Flag.png" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Pressed.png" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\POWDER\Button.png" />
+    <Resource Include="Minesweeper_Icon.ico" />
     <Content Include="Resources\Sounds\CLICK.WAV">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -244,7 +245,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.ico" />
+    <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Minesweeper_Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\IMAGE-ITEMS\APPLIES_TO_ALL_THEMES\Splash.png" />

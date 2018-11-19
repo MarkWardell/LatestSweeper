@@ -16,7 +16,7 @@
         Width ="{Binding Width, Mode=TwoWay}"
        
         
-        Background="{DynamicResource BoardBG}" Closing="Window_Closing_1" Loaded="Window_Loaded" >
+        Background="{DynamicResource BoardBG}" Closing="Window_Closing_1" Loaded="Window_Loaded" Icon="/Sweeper;component/Resources/IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/Minesweeper_Icon.ico" >
     <Window.InputBindings>
         <KeyBinding Command="{Binding UndoAllOrLastCommand}"  
                     CommandParameter="LAST"
