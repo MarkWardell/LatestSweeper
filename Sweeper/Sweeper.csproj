@@ -227,7 +227,6 @@
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Flag.png" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\CHOCALATE\Pressed.png" />
     <Resource Include="Resources\IMAGE-ITEMS\THEMES\POWDER\Button.png" />
-    <Resource Include="Minesweeper_Icon.ico" />
     <Content Include="Resources\Sounds\CLICK.WAV">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
