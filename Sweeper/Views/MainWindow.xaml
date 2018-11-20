@@ -284,13 +284,13 @@
                               Command="{Binding GameExitCommand}" />
 
                 </MenuItem>
+                
                 <MenuItem  Header="Themes"  
                            StaysOpenOnClick="True" 
                            Foreground="{DynamicResource HiGridBorderBrush}"
                            ItemsSource="{DynamicResource Themes}">
                     <MenuItem.ItemContainerStyle>
                         <Style TargetType="MenuItem">
-
                             <Setter Property="IsChecked" Value="{Binding Converter={StaticResource themechecker}, Mode=OneWay}"/>
                             <Setter Property="Command" 
                                     Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=MenuItem}, Path=DataContext.GameThemeCommand}" />
@@ -303,6 +303,9 @@
 
 
                 </MenuItem>
+                
+                <ComboBox ItemsSource="{DynamicResource Themes}" SelectedItem="{Binding Theme, Mode=TwoWay}" Width="90" ></ComboBox>
+                
                 <MenuItem Header="About" 
                               
                               Command="{Binding AboutCommand}"  

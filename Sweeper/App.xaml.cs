@@ -91,7 +91,7 @@ namespace Sweeper
         {
             ResourceDictionary myresourcedictionary = new ResourceDictionary();
 
-            Uri u = new Uri("Resources/"+p+"-THEME.xaml",
+            Uri u = new Uri($"Resources/{ p.ToUpper() }-THEME.xaml",
                     UriKind.Relative);
       
             myresourcedictionary.Source = u;

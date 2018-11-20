@@ -24,8 +24,7 @@ namespace Sweeper.ViewModels
         public SweeperViewModel()
             : this(new RealDialogService(), new SoundAdornmentRes())
         {
-            //if (App.ShowCommandStackWindowOnStartup)
-            //    this.ViewUndoRedoCommand.Execute(null);
+          
 
         }
         /// <summary>
@@ -50,9 +49,9 @@ namespace Sweeper.ViewModels
             if (System.Windows.Application.Current.MainWindow == null)
                 NewGame();
             App.ChangeThemeEvent += App_ChangeThemeEvent;
-            //UndoRedoView urv = new UndoRedoView();
+           
             RelayCommand.RefreshStacksEvent += RelayCommand_RefreshStacksEvent;
-           //App.SetTheme("CHOCALATE");
+         
             Themes.Clear();
             String [] l = (String [])App.Current.FindResource("Themes");
             foreach (String s in l)
@@ -80,9 +79,12 @@ namespace Sweeper.ViewModels
 
         private void App_ChangeThemeEvent(object sender, EventArgs e)
         {
+            ApplicationThemeEventArg ae = e as ApplicationThemeEventArg;
             GameConstants.GameStates last = GameState;
+            Theme = ae.Theme;
             GameState = GameConstants.GameStates.IN_DECISION;
             GameState = last;
+
 
         }
 
@@ -199,6 +201,7 @@ namespace Sweeper.ViewModels
             {
                 return gameTypeBinding[(int)GameConstants.GameTypes.BEGINNER];
             }
+
         }
         public bool IsIntermediate
         {
@@ -448,7 +451,7 @@ namespace Sweeper.ViewModels
         }
 
        
-        private string theme = "DEFAULT";
+        private string theme = "Default";
         public string Theme { get { return theme; } set { theme = value; OnPropertyChanged("Theme"); } }
 
         #endregion

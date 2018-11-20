@@ -7,7 +7,7 @@ namespace SweeperTest
     public class TestViewModel
     {
         [TestMethod]
-        public void CreateGame()
+        public void  CreateGame()
         {
 
         }

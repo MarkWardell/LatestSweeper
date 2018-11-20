@@ -11,9 +11,16 @@ namespace Sweeper
             get { return theme; }
             private set { theme = value; }
         }
+        private string themeID;
+        public string ThemeID
+        {
+            get { return themeID;  }
+            set { themeID = value; }
+        }
         public ApplicationThemeEventArg(string strTheme)
         {
             theme = strTheme;
+            themeID = strTheme.ToUpper();
         }
     }
 }

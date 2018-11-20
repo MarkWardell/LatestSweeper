@@ -370,12 +370,12 @@ namespace Sweeper.ViewModels
 
         private void ExecuteGameThemeCommand(string strTheme)
         {
-            App.SetTheme(strTheme.ToUpper());
+            App.SetTheme(strTheme);
             
             Debug.WriteLine(_gameThemeCommand.DisplayText);
             Debug.WriteLine("Theme={" + strTheme + "}");
             
-            //This code may seem odd byt it causes the Converter to Get Called
+            //This code may seem odd but it causes the Converter to Get Called
             // Without the correct theme Item never gets checked
             Themes.Clear();
 
