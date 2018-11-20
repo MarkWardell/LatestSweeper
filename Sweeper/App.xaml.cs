@@ -100,7 +100,7 @@ namespace Sweeper
            
             Application.Current.Resources.MergedDictionaries.Add(myresourcedictionary);
            
-            RaiseChangeThemeEvent(p);
+          
         }
     }
 

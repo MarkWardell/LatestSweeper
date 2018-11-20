@@ -452,7 +452,12 @@ namespace Sweeper.ViewModels
 
        
         private string theme = "Default";
-        public string Theme { get { return theme; } set { theme = value; OnPropertyChanged("Theme"); } }
+        public string Theme { get { return theme; } set {
+                                                          theme = value;
+                                                          GameThemeCommand.Execute(theme);
+                                                          OnPropertyChanged("Theme");
+                                                        }
+        }
 
         #endregion
 

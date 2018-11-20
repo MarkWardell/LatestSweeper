@@ -374,17 +374,23 @@ namespace Sweeper.ViewModels
             
             Debug.WriteLine(_gameThemeCommand.DisplayText);
             Debug.WriteLine("Theme={" + strTheme + "}");
+
+            foreach (var gp in _cells)
+            {
+                gp.ChangeTheme(strTheme);
+
+            }
             
             //This code may seem odd but it causes the Converter to Get Called
             // Without the correct theme Item never gets checked
-            Themes.Clear();
+            //Themes.Clear();
 
-            String[] l = (String[])App.Current.FindResource("Themes");
-            foreach (String s in l)
-            {
-                Themes.Add(s);
+            //String[] l = (String[])App.Current.FindResource("Themes");
+            //foreach (String s in l)
+            //{
+            //    Themes.Add(s);
 
-            }
+            //}
         }
         #endregion
 

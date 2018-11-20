@@ -6,9 +6,8 @@
         xmlns:vw="clr-namespace:Sweeper.Views"
         xmlns:vm="clr-namespace:Sweeper.ViewModels"
         xmlns:mouse="clr-namespace:Sweeper.Views"
-        xmlns:diag="clr-na
-                
-        space:System.Diagnostics;assembly=WindowsBase"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        
         Title ="{Binding Path=Title, FallbackValue='MainWindowXX'}"         
         MinHeight="450"  
         MinWidth ="310"
@@ -285,26 +284,12 @@
 
                 </MenuItem>
                 
-                <MenuItem  Header="Themes"  
-                           StaysOpenOnClick="True" 
-                           Foreground="{DynamicResource HiGridBorderBrush}"
-                           ItemsSource="{DynamicResource Themes}">
-                    <MenuItem.ItemContainerStyle>
-                        <Style TargetType="MenuItem">
-                            <Setter Property="IsChecked" Value="{Binding Converter={StaticResource themechecker}, Mode=OneWay}"/>
-                            <Setter Property="Command" 
-                                    Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=MenuItem}, Path=DataContext.GameThemeCommand}" />
-                            <Setter Property="CommandParameter" Value="{Binding}" />
-                            <Setter Property="Background" Value="{DynamicResource INTERIOR}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource BoardBG}"/>
-                            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                        </Style>
-                    </MenuItem.ItemContainerStyle>
-
-
-                </MenuItem>
+               
                 
-                <ComboBox ItemsSource="{DynamicResource Themes}" SelectedItem="{Binding Theme, Mode=TwoWay}" Width="90" ></ComboBox>
+                <ComboBox ItemsSource   ="{DynamicResource Themes}" 
+                          SelectedItem  ="{Binding Theme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="90" >
+                  
+                </ComboBox>
                 
                 <MenuItem Header="About" 
                               
@@ -372,7 +357,6 @@
                            ItemTemplate= "{DynamicResource GamePieceTemplate}"  >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <!--<StackPanel/>-->
                         <UniformGrid                          
                             Columns="{Binding Columns}" 
                             Rows   ="{Binding Rows}"  >
