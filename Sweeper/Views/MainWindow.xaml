@@ -209,6 +209,7 @@
                               Command="{Binding NewGameCommand}"
                               CommandParameter="SAMEGAME"
                               Foreground="{DynamicResource BoardBG}"/>
+                    
                     <MenuItem Header="Beginner" 
                               Style="{DynamicResource MenuStyle}" 
                               Command="{Binding NewGameCommand}"
@@ -287,14 +288,17 @@
                
                 
                 <ComboBox ItemsSource   ="{DynamicResource Themes}" 
-                          SelectedItem  ="{Binding Theme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="90" >
+                          SelectedItem  ="{Binding Theme, Mode=TwoWay, 
+                                           UpdateSourceTrigger=PropertyChanged}" Width="90" 
+                          
+                          >
                   
                 </ComboBox>
                 
                 <MenuItem Header="About" 
                               
                               Command="{Binding AboutCommand}"  
-                             Foreground="{DynamicResource HiGridBorderBrush}"
+                              Foreground="{DynamicResource HiGridBorderBrush}"
                               x:Name="mnuAbout" />
             </Menu>
 
