@@ -34,15 +34,16 @@
                                         <RowDefinition />
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <!--<Border Margin="2" Grid.Row="0" Background="{DynamicResource BoardBG}" />-->
+                                    <Border Margin="2" Grid.Row="0" Background="{DynamicResource BoardBG}" />
                                     <ContentPresenter />
                                 </Grid>
                             </Border>
-                            <!--<ControlTemplate.Triggers>
+                            <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="{DynamicResource INTERIOR}" />
+                                    <Setter Property="Background" Value="Gray" />
+                                    <Setter Property="Background" Value="Black" />
                                 </Trigger>
-                            </ControlTemplate.Triggers>-->
+                            </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
                     </Setter>
