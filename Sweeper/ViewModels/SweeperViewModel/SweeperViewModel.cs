@@ -56,16 +56,21 @@ namespace Sweeper.ViewModels
             RelayCommand.RefreshStacksEvent += RelayCommand_RefreshStacksEvent;
          
             Themes.Clear();
-            // String [] l = (String [])App.Current.FindResource("Themes");
             var sep = new char[] { ';' };
-            var l = ConfigurationManager.AppSettings["Themes"].Split(sep);
+            //String [] l = (String [])App.Current.FindResource("Themes");
+         
+            
+                
+               var  l = ConfigurationManager.AppSettings["Themes"].Split(sep);
+            
             foreach (String s in l)
             {
                Themes.Add(s);
 
             }
-            //String[] gt = (String[])App.Current.FindResource("GameTypes");
-            var gt = ConfigurationManager.AppSettings["GameTypes"].Split(sep);
+           
+            var  gt = ConfigurationManager.AppSettings["GameTypes"].Split(sep);
+            
             foreach (String s in gt)
             {
                 GameTypes.Add(s);

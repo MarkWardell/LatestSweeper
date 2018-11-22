@@ -12,6 +12,7 @@ namespace SweeperTest
         {
             var vm = new SweeperViewModel();
 
+            Assert.AreNotEqual(null, vm);
         }
     }
 }
