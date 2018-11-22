@@ -58,19 +58,25 @@ namespace Sweeper.ViewModels
             Themes.Clear();
             var sep = new char[] { ';' };
             //String [] l = (String [])App.Current.FindResource("Themes");
-         
+
+            var themesStr = "Chocalate;Copper;Default;KeyWest;Powder";
+
             
-                
-               var  l = ConfigurationManager.AppSettings["Themes"].Split(sep);
-            
+
+            var  l = themesStr.Split(sep);
+            if (l == null || l.Count() == 0)
+                l = (String[])App.Current.FindResource("Themes");
+
             foreach (String s in l)
             {
                Themes.Add(s);
 
             }
-           
-            var  gt = ConfigurationManager.AppSettings["GameTypes"].Split(sep);
-            
+
+            var gameTypesStr = "Beginner;Intermediate;Advanced;Custom";
+            var  gt = gameTypesStr.Split(sep);
+            if (gt == null || gt.Count() == 0)
+                gt = (String[])App.Current.FindResource("GameTypes");
             foreach (String s in gt)
             {
                 GameTypes.Add(s);
