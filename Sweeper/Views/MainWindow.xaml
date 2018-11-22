@@ -33,7 +33,8 @@
                     CommandParameter="ALL"
                     Key="R" 
                     Modifiers="Control"      />
-        <KeyBinding Command="{Binding ViewUndoRedoCommand}"                     
+        <KeyBinding Command="{Binding ViewUndoRedoCommand}"     
+                    
                     Key="S" 
                     Modifiers="Control"      />
     </Window.InputBindings>

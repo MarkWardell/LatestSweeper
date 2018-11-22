@@ -147,12 +147,7 @@ namespace Sweeper.ViewModels
                         GameBoardEnabled = true;
                         tmr.Enabled = true;
                     }
-                    //else
-                    //    tmr.Enabled = false;
-                    //if (value == GameConstants.GameStates.LOST ||
-                    //    value == GameConstants.GameStates.WON)
-                    //    GameBoardEnabled = false;
-
+                   
                     gameState = value;
                     switch (gameState)
                     {
