@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sweeper.ViewModels;
 
 namespace SweeperTest
 {
@@ -9,6 +10,7 @@ namespace SweeperTest
         [TestMethod]
         public void  CreateGame()
         {
+            var vm = new SweeperViewModel();
 
         }
     }

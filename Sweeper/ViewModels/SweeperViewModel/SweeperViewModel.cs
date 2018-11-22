@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Configuration;
 using System.Linq;
 using System.Timers;
 using System.Windows;
@@ -39,7 +40,7 @@ namespace Sweeper.ViewModels
         /// <param name="iSnd"></param>
         public SweeperViewModel(IDialogService iDlg, IAdornGameWithSounds iSnd)
         {
-            if (System.Windows.Application.Current.MainWindow == null)
+            if (Application.Current == null || Application.Current.MainWindow == null)
                 soundAdornment = new NullSoundAdornment();  // Turn off Sounds in Designer
             else
                 soundAdornment = iSnd;
@@ -48,20 +49,23 @@ namespace Sweeper.ViewModels
             tmr.Elapsed += tmr_Elapsed;
             //Although this is Static it is ok because the two objects have the same lifetimes
             RelayCommand.NewCommandItemEvent += RelayCommand_NewCommandItemEvent;
-            if (System.Windows.Application.Current.MainWindow == null)
+           // if (System.Windows.Application.Current.MainWindow == null)
                 NewGame();
             App.ChangeThemeEvent += App_ChangeThemeEvent;
            
             RelayCommand.RefreshStacksEvent += RelayCommand_RefreshStacksEvent;
          
             Themes.Clear();
-            String [] l = (String [])App.Current.FindResource("Themes");
+            // String [] l = (String [])App.Current.FindResource("Themes");
+            var sep = new char[] { ';' };
+            var l = ConfigurationManager.AppSettings["Themes"].Split(sep);
             foreach (String s in l)
             {
                Themes.Add(s);
 
             }
-            String[] gt = (String[])App.Current.FindResource("GameTypes");
+            //String[] gt = (String[])App.Current.FindResource("GameTypes");
+            var gt = ConfigurationManager.AppSettings["GameTypes"].Split(sep);
             foreach (String s in gt)
             {
                 GameTypes.Add(s);
