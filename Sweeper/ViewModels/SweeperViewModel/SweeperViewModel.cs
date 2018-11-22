@@ -18,13 +18,15 @@ namespace Sweeper.ViewModels
         public event PropertyChangedEventHandler PropertyChanged = null;
         private IAdornGameWithSounds soundAdornment;
         private IDialogService dialogService;
-
+        private static SweeperViewModel svm = null;
+        public static SweeperViewModel ViewModel { get { return svm; } }
         #region CONSTRUCTORS
 
         public SweeperViewModel()
             : this(new RealDialogService(), new SoundAdornmentRes())
         {
-          
+            if (svm == null)
+                svm = this;
 
         }
         /// <summary>
@@ -70,6 +72,8 @@ namespace Sweeper.ViewModels
             UrVm.RedoCommand = this.RedoAllOrLastCommand;
             UrVm.UndoCommand = this.UndoAllOrLastCommand;
             //UrV.DataContext = UrVm;
+            if (svm == null)
+                svm = this;
         }
 
         private void RelayCommand_RefreshStacksEvent(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace Sweeper.Views
         public MainWindow()
         {
             InitializeComponent();
-            game = new SweeperViewModel();
+            game = SweeperViewModel.ViewModel;
             this.DataContext = game;
             game.NewGameCommand.Execute("BEGINNER");           
         }
