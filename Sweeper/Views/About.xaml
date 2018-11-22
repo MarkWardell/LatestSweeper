@@ -8,7 +8,7 @@
         AllowsTransparency="True" >
 
 	<Grid Margin="10" Effect="{DynamicResource DIAGTEXTEFFECT}" >
-		<Button Content="Ok" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Width="70" FontSize="16" Click="Button_Click" Effect="{DynamicResource DIAGTEXTEFFECT}" Margin="140,0"  />
+		<Button Content="Ok" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Style="{DynamicResource SweeperButtonStyle}" Width="70" FontSize="16" Click="Button_Click" Effect="{DynamicResource DIAGTEXTEFFECT}" Margin="140,0"  />
 		<Image HorizontalAlignment="Left" Height="140" Margin="106,32,0,0" VerticalAlignment="Top" Width="138" Source="/Sweeper;component/Resources/IMAGE-ITEMS/APPLIES_TO_ALL_THEMES/Minesweeper_Icon.png" RenderTransformOrigin="1,0.5">
 			<Image.RenderTransform>
 				<TransformGroup>

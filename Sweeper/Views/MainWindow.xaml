@@ -20,8 +20,8 @@
         <KeyBinding Command="{Binding UndoAllOrLastCommand}"  
                     CommandParameter="LAST"
                     Key="Z" 
-                    Modifiers="Control"      />        
-       <KeyBinding Command="{Binding RedoAllOrLastCommand}"  
+                    Modifiers="Control"      />
+        <KeyBinding Command="{Binding RedoAllOrLastCommand}"  
                     CommandParameter="LAST"
                     Key="Y" 
                     Modifiers="Control"      />
@@ -33,7 +33,8 @@
                     CommandParameter="ALL"
                     Key="R" 
                     Modifiers="Control"      />
-        <KeyBinding Command="{Binding ViewUndoRedoCommand}"                     
+        <KeyBinding Command="{Binding ViewUndoRedoCommand}"     
+                    
                     Key="S" 
                     Modifiers="Control"      />
     </Window.InputBindings>
@@ -147,7 +148,10 @@
             <Setter Property="Foreground" Value="{DynamicResource BoardBG}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
-       
+        <ControlTemplate x:Key="MenuItemTemplate" TargetType="{x:Type MenuItem}">
+            <Grid/>
+        </ControlTemplate>
+
 
     </Window.Resources>
     <Window.DataContext>
@@ -209,13 +213,13 @@
                               Command="{Binding NewGameCommand}"
                               CommandParameter="SAMEGAME"
                               Foreground="{DynamicResource BoardBG}"/>
-                    
+
                     <MenuItem Header="Beginner" 
                               Style="{DynamicResource MenuStyle}" 
                               Command="{Binding NewGameCommand}"
                               CommandParameter="BEGINNER"
                               Foreground="{DynamicResource BoardBG}"
-                              IsChecked="{Binding IsBeginner, Mode=OneWay}" />
+                              IsChecked="{Binding IsBeginner, Mode=OneWay}" Template="{DynamicResource MenuItemTemplate}" />
                     <MenuItem Header="Intermediate" 
                               Style="{DynamicResource MenuStyle}"     
                               Command="{Binding NewGameCommand}" 
@@ -239,7 +243,7 @@
                               Command="{Binding GameLogShownCommand}"  
                               Foreground="{DynamicResource BoardBG}"
                               IsChecked="{Binding IsLogWindowShown, Mode=TwoWay}"/>
-                    
+
                     <MenuItem Header="Undo..." 
                               Style="{DynamicResource MenuStyle}" 
                               Foreground="{DynamicResource BoardBG}">
@@ -284,17 +288,17 @@
                               Command="{Binding GameExitCommand}" />
 
                 </MenuItem>
-                
-               
-                
+
+
+
                 <ComboBox ItemsSource   ="{DynamicResource Themes}" 
                           SelectedItem  ="{Binding Theme, Mode=TwoWay, 
                                            UpdateSourceTrigger=PropertyChanged}" Width="90" 
                           
                           >
-                  
+
                 </ComboBox>
-                
+
                 <MenuItem Header="About" 
                               
                               Command="{Binding AboutCommand}"  
@@ -304,14 +308,14 @@
 
         </Border>
         <Border Style="{DynamicResource SectionBorder}" Grid.Row="2"   >
-            
+
             <Border  >
                 <Grid >
                     <Border HorizontalAlignment="Left" 
                             Style="{DynamicResource SectionBorder}" 
                             Margin="20,0,0,0" Width="75" BorderThickness="4"
                             Height="44">
-                       
+
                         <Label  x:Name="tbMines" 
                                   
                                   Style="{DynamicResource CounterLabel}"
@@ -333,12 +337,12 @@
                                         vw:MouseBehavior.MouseLeftButtonUpCommand="{Binding UnPressSmileyCommand}"
                                         vw:MouseBehavior.MouseLeaveCommand="{Binding LeaveSmileyCommand}"
                                />
-                   
+
                     <Border Style="{DynamicResource SectionBorder}" 
                             HorizontalAlignment="Right" 
                             Width="75" Height="44" BorderThickness="4"
                             Margin="0,0,20,0" >
-                        
+
                         <Label x:Name="tbTime"  
                                  Style="{DynamicResource CounterLabel}"                              
                                  Content="{Binding Time}"  

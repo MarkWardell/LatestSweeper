@@ -57,6 +57,14 @@
                     <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Green" />
                 </Style.Resources>
             </Style>-->
+            <Style x:Key="SweeperButtonStyle" TargetType="{x:Type Button}">
+
+                <Setter Property="Background" Value="{DynamicResource BUTTON}"/>
+                <Setter Property="Foreground" Value="{DynamicResource GridBorderBrush}"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+
+            </Style>
             <x:Array Type="{x:Type sys:String}" x:Key="Themes" x:Name="Themes">
                 <sys:String>Chocalate</sys:String>
                 <sys:String>Copper</sys:String>

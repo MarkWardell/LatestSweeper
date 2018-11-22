@@ -600,7 +600,7 @@ namespace Sweeper.ViewModels
                 if (_UndoAllOrLastCommand == null)
                 {
                     _UndoAllOrLastCommand = new RelayCommand(param => ExecuteUndoAllOrLast((string)param),
-                                                         param => true, "UndoAllOrLastCommand", "STACK");
+                                                         param => CanUndo(), "UndoAllOrLastCommand", "STACK");
                    
 
 
@@ -608,6 +608,11 @@ namespace Sweeper.ViewModels
                 return _UndoAllOrLastCommand;
             }
             set { _UndoAllOrLastCommand = value; }
+        }
+
+        private bool CanUndo()
+        {
+            return undoStack.Count > 1;
         }
 
         private void ExecuteUndoAllOrLast(string param)
@@ -641,12 +646,17 @@ namespace Sweeper.ViewModels
                 if (_RedoAllOrLastCommand == null)
                 {
                     _RedoAllOrLastCommand = new RelayCommand(param => ExecuteRedoAllOrLast((string)param),
-                                                         param => true, "RedoAllOrLastCommand", "STACK");
+                                                         param => CanRedo(), "RedoAllOrLastCommand", "STACK");
 
                 }
                 return _RedoAllOrLastCommand;
             }
             set { _RedoAllOrLastCommand = value; }
+        }
+
+        private bool CanRedo()
+        {
+            return redoStack.Count >= 1;
         }
 
         private void ExecuteRedoAllOrLast(string param)
