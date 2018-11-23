@@ -97,11 +97,9 @@
     <Compile Include="Services\Interfaces\IAdornGameWithSounds.cs" />
     <Compile Include="Services\Interfaces\IChangeTheme.cs" />
     <Compile Include="Services\Interfaces\IDialogService.cs" />
-    <Compile Include="ViewModels\CommandItem.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ViewModels\SweeperViewModel\SweeperViewModel.CMDS.cs" />
-    <Compile Include="ViewModels\UndoRedoViewModel.cs" />
+    <Compile Include="ViewModels\UndoRedoViewModel\CommandItem.cs" />
+    <Compile Include="ViewModels\UndoRedoViewModel\UndoRedoViewModel.cs" />
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
