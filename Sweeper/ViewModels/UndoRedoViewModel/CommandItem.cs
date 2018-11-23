@@ -75,10 +75,7 @@ namespace Sweeper.ViewModels
         }
 
         private int time;
-        //private string str1;
-        //private object parameter;
-        //private string _category;
-        //private string str2;
+        
 
         public int Time
         {
