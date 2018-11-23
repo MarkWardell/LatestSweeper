@@ -219,7 +219,7 @@
                               Command="{Binding NewGameCommand}"
                               CommandParameter="BEGINNER"
                               Foreground="{DynamicResource BoardBG}"
-                              IsChecked="{Binding IsBeginner, Mode=OneWay}" Template="{DynamicResource MenuItemTemplate}" />
+                              IsChecked="{Binding IsBeginner, Mode=OneWay}"/>
                     <MenuItem Header="Intermediate" 
                               Style="{DynamicResource MenuStyle}"     
                               Command="{Binding NewGameCommand}" 
@@ -232,12 +232,12 @@
                               CommandParameter="ADVANCED"
                               Foreground="{DynamicResource BoardBG}"
                               IsChecked="{Binding IsAdvanced, Mode=OneWay}" />
-                    <!--<MenuItem Header="Custom" 
+                    <MenuItem Header="Custom" 
                               Style="{DynamicResource MenuStyle}" 
                               Command="{Binding NewGameCommand}"  
                               CommandParameter="CUSTOM"
                               Foreground="{DynamicResource BoardBG}"
-                              IsChecked="{Binding IsCustom, Mode=OneWay}"/>-->
+                              IsChecked="{Binding IsCustom, Mode=OneWay}"/>
                     <MenuItem Header="Log Window" 
                               Style="{DynamicResource MenuStyle}" 
                               Command="{Binding GameLogShownCommand}"  
